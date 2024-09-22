@@ -1,7 +1,6 @@
 import express from "express";
 import { isAdmin, isAuth } from "./../middlewares/authMiddleware.js";
 import {
-  createProductController,
   deleteProductController,
   getAllProductsController,
   getSingleProductController,
@@ -21,8 +20,7 @@ router.get("/get-all", getAllProductsController);
 // GET SINGLE PRODUCTS
 router.get("/:id", getSingleProductController);
 
-// CREATE PRODUCT
-router.post("/create", isAuth, isAdmin, singleUpload, createProductController);
+
 
 // UPDATE PRODUCT
 router.put("/:id", isAuth, isAdmin, updateProductController);
